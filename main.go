@@ -121,7 +121,10 @@ var upgrader = websocket.Upgrader{
 }
 
 func HandleOCPP(w http.ResponseWriter, r *http.Request) {
-	conn, err := upgrader.Upgrade(w, r, nil)
+	header := http.Header{
+		"Sec-Websocket-Protocol": []string{"ocpp2.0"},
+	}
+	conn, err := upgrader.Upgrade(w, r, header)
 	if err != nil {
 		http.Error(w, err.Error(), 500)
 		return
