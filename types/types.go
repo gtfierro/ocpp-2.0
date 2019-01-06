@@ -1,17 +1,21 @@
 package types
 
+import (
+	"github.com/gtfierro/ocpp2.0/enums"
+)
+
 type SetVariableDataType struct {
-	AttributeType  AttributeEnumType `json:"attributeType"`
-	AttributeValue string            `json:"attributeValue"`
-	Component      ComponentType     `json:"component"`
-	Variable       VariableType      `json:"variable"`
+	AttributeType  enums.AttributeEnumType `json:"attributeType"`
+	AttributeValue string                  `json:"attributeValue"`
+	Component      ComponentType           `json:"component"`
+	Variable       VariableType            `json:"variable"`
 }
 
 type SetVariableResultType struct {
-	AttributeType  AttributeEnumType         `json:"attributeType"`
-	AttributeValue SetVariableStatusEnumType `json:"attributeStatus"`
-	Component      ComponentType             `json:"component"`
-	Variable       VariableType              `json:"variable"`
+	AttributeType  enums.AttributeEnumType         `json:"attributeType"`
+	AttributeValue enums.SetVariableStatusEnumType `json:"attributeStatus"`
+	Component      ComponentType                   `json:"component"`
+	Variable       VariableType                    `json:"variable"`
 }
 
 type ComponentType struct {
@@ -31,30 +35,30 @@ type VariableType struct {
 }
 
 type GetVariableDataType struct {
-	AttributeType AttributeEnumType `json:"attributeType"`
-	Component     ComponentType     `json:"component"`
-	Variable      VariableType      `json:"variable"`
+	AttributeType enums.AttributeEnumType `json:"attributeType"`
+	Component     ComponentType           `json:"component"`
+	Variable      VariableType            `json:"variable"`
 }
 
 type GetVariableResultType struct {
-	AttributeStatus GetVariableStatusEnumType `json:"attributeStatus"`
-	AttributeType   AttributeEnumType         `json:"attributeType"`
-	AttributeValue  string                    `json:"attributeValue"`
-	Component       ComponentType             `json:"component"`
-	Variable        VariableType              `json:"variable"`
+	AttributeStatus enums.GetVariableStatusEnumType `json:"attributeStatus"`
+	AttributeType   enums.AttributeEnumType         `json:"attributeType"`
+	AttributeValue  string                          `json:"attributeValue"`
+	Component       ComponentType                   `json:"component"`
+	Variable        VariableType                    `json:"variable"`
 }
 
 type TransactionType struct {
 	Id                string
-	ChargingState     ChargingStateEnumType
+	ChargingState     enums.ChargingStateEnumType
 	TimeSpentCharging int
-	StoppedReason     ReasonEnumType
+	StoppedReason     enums.ReasonEnumType
 	RemoteStartId     int
 }
 
 type IdTokenType struct {
-	IdToken string          `json:"idToken"`
-	Type    IdTokenEnumType `json:"type"`
+	IdToken string                `json:"idToken"`
+	Type    enums.IdTokenEnumType `json:"type"`
 	//AdditionalInfo AdditionalInfoType
 }
 

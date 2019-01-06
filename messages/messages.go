@@ -1,6 +1,7 @@
 package messages
 
 import (
+	"github.com/gtfierro/ocpp2.0/enums"
 	"github.com/gtfierro/ocpp2.0/types"
 	"time"
 )
@@ -28,7 +29,7 @@ type GetVariablesResponse struct {
 type StatusNotificationRequest struct {
 	// rfc3339
 	Timestamp       time.Time                     `json:"timestamp"`
-	ConnectorStatus types.ConnectorStatusEnumType `json:"connectorStatus"`
+	ConnectorStatus enums.ConnectorStatusEnumType `json:"connectorStatus"`
 	EvseId          int                           `json:"evseId"`
 	ConnectorId     int                           `json:"connectorId"`
 }
@@ -38,10 +39,10 @@ type StatusNotificationResponse struct {
 }
 
 type TransactionEventRequest struct {
-	EventType types.TransactionEventEnumType `json:"eventType"`
+	EventType enums.TransactionEventEnumType `json:"eventType"`
 	// rfc3339
 	Timestamp          time.Time                   `json:"timestamp"`
-	TriggerReason      types.TriggerReasonEnumType `json:"triggerReason"`
+	TriggerReason      enums.TriggerReasonEnumType `json:"triggerReason"`
 	SeqNo              int                         `json:"seqno"`
 	Offline            bool                        `json:"offline"`
 	NumberOfPhasesUsed int                         `json:"numberOfPhasesUsed"`

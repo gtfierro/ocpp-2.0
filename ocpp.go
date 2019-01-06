@@ -70,9 +70,9 @@ func (station *ChargingStation) CallFunction(ctx context.Context, frame OCPPCall
 
 func (station *ChargingStation) SetVariables(ctx context.Context, request messages.SetVariablesRequest) (messages.SetVariablesResponse, error) {
 
-	return SetVariablesResponse{}, nil
+	return messages.SetVariablesResponse{}, nil
 }
 
-func (station *ChargingStation) GetVariables(ctx context.Context, request GetVariablesRequest) (GetVariablesResponse, error) {
-	return GetVariablesResponse{}, nil
+func (station *ChargingStation) GetVariables(ctx context.Context, request messages.GetVariablesRequest) (messages.GetVariablesResponse, error) {
+	return messages.GetVariablesResponse{}, nil
 }
