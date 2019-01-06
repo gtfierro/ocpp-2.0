@@ -3,7 +3,7 @@ package main
 import (
 	"context"
 	"encoding/json"
-	"github.com/gtfierro/ocpp2.0/messages"
+	"github.com/gtfierro/ocpp-2.0/messages"
 	"sync"
 )
 

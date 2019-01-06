@@ -1,8 +1,8 @@
 package messages
 
 import (
-	"github.com/gtfierro/ocpp2.0/enums"
-	"github.com/gtfierro/ocpp2.0/types"
+	"github.com/gtfierro/ocpp-2.0/enums"
+	"github.com/gtfierro/ocpp-2.0/types"
 	"time"
 )
 
